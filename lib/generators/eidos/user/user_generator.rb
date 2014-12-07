@@ -3,6 +3,8 @@ class Eidos::UserGenerator < Rails::Generators::Base
 
 	def create_user
       generate "devise user"
+#      generate "devise:views"
+#      generate "devise:controllers users"
       rake 'db:migrate'
 
 		#puts "!!!!!!!!!!!!!!!!"

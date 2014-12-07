@@ -47,6 +47,8 @@ module Eidos
 
       gem 'bcrypt', '~> 3.1.7'
       gem 'devise' #, '~> 0.0.0'
+#      gem 'devise-i18n-views'
+      gem 'devise-i18n-views', '~> 0.3.2'
 
       gem 'eidos', '~> 0.0.0'
 
@@ -65,11 +67,6 @@ module Eidos
 
     def generate_user
       generate 'eidos:user'
-
-      #generate "bootstrap:install"
-#      generate "scaffold", "user email:string password:digest"
-#      rake "db:migrate"
-      
     end
 
     def generate_journal
