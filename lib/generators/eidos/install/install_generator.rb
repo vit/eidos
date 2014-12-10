@@ -2,9 +2,8 @@ require 'rails/generators'
 
 module Eidos
   module Generators
-#  module Bootstrap
     class InstallGenerator < ::Rails::Generators::Base
-      desc 'Copy BootstrapGenerators default files'
+      desc 'Copy Eidos default files'
       source_root ::File.expand_path('../templates', __FILE__)
 
       class_option :template_engine
@@ -15,6 +14,11 @@ module Eidos
         directory "lib/templates/#{options[:template_engine]}"
       end
 
+#=begin
+#      def no_spring
+#        gsub_file 'Gemfile', /^(gem 'spring')/, '#\0'
+#      end
+
       def copy_form_builder
         copy_file "form_builders/form_builder/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}"
       end
@@ -22,6 +26,17 @@ module Eidos
       def create_layout
         template "layouts/starter.html.#{options[:template_engine]}", "app/views/layouts/application.html.#{options[:template_engine]}", force: true
         template "layouts/starter_nav.html.#{options[:template_engine]}", "app/views/layouts/_nav.html.#{options[:template_engine]}"
+      end
+
+      def create_home
+#        template "views/home/index.html.#{options[:template_engine]}", "app/views/home/index.html.#{options[:template_engine]}"
+        generate 'controller home index'
+        route 'root "home#index"'
+      end
+
+      def create_db_seeds
+        template "db/templates/seeds.rb.#{options[:template_engine]}", "db/seeds.rb", force: true
+#        rake 'db:setup'
       end
 
       def create_stylesheets
@@ -43,6 +58,12 @@ module Eidos
           end
         end
       end
+
+      def gems_install
+        generate "devise:install"
+      end
+#=end
+
     end
   end
 end

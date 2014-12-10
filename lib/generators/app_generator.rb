@@ -13,9 +13,13 @@ module Eidos
 
     def eidos_customization
       invoke :customize_gemfile
-      invoke :generate_install
-      invoke :generate_user
-      invoke :generate_journal
+      generate 'eidos:install'
+      generate 'eidos:user'
+      generate 'eidos:journal'
+
+#      invoke :generate_install
+#      invoke :generate_user
+#      invoke :generate_journal
 
 #      generate ""
       #invoke :setup_development_environment
@@ -55,11 +59,14 @@ module Eidos
       #inside app_name do
       #  run 'bundle install'
       #end
+
+#      gsub_file 'Gemfile', /^(gem 'spring')/, '#\0'
     end
-    
+ 
+=begin
     def generate_install
       generate 'eidos:install'
-      generate "devise:install"
+#      generate "devise:install"
 #      template 'app0/views/layouts/application.html.erb', 'app/views/layouts/application.html.erb', force: true
 #      template 'app/views/layouts/application_0.html.erb', 'app/views/layouts/application_1.html.erb', force: true
 #      template 'app/views/layouts/application.html.erb' #, force: true
@@ -73,7 +80,7 @@ module Eidos
       generate 'scaffold journal'
       rake 'db:migrate'
     end
-
+=end
 
 =begin
     def setup_database

@@ -6,6 +6,8 @@ class Eidos::UserGenerator < Rails::Generators::Base
 #      generate "devise:views"
 #      generate "devise:controllers users"
       rake 'db:migrate'
+      rake 'db:setup'
+
 
 		#puts "!!!!!!!!!!!!!!!!"
 		#puts source_paths

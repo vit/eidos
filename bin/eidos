@@ -32,6 +32,7 @@ puts "====="
 =end
 
 Eidos::AppGenerator.source_root templates_root
+#Eidos::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << templates_root
 Eidos::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << templates_root
 
 puts Eidos::AppGenerator.source_root
