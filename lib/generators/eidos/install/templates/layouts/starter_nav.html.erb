@@ -1,17 +1,8 @@
 <nav rrole="navigation" class="navbar nnavbar-custom nnavbar-default navbar-inverse nnavbar-inner navbar-fixed-top">
       <ul class="nav nnavbar-left navbar-nav nnavbar-right">
         <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-        <%% if user_signed_in? %>
-          <li><a href="<%%#= profile_path(current_user) %>">My profile:
-            <i class="fa fa-user"></i> <%%= current_user.email %><%%#= current_user.full_name %></a></li>
-          <li><%%= link_to(destroy_user_session_path, :method => :delete) do %>
-            <i class="fa fa-sign-in"></i> Logout
-          <%% end %></li>
-        <%% else %>
-          <li><%%= link_to(new_user_session_path) do %>
-            <i class="fa fa-sign-out"></i> Login
-          <%% end %></li>
-        <%% end %>
+<!-- insert module links before this line -->
+<!-- insert user links before this line -->
       </ul>
     </nav>
 

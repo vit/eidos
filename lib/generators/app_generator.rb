@@ -15,7 +15,7 @@ module Eidos
       invoke :customize_gemfile
       generate 'eidos:install'
       generate 'eidos:user'
-      generate 'eidos:journal'
+#      generate 'eidos:journal'
 
 #      invoke :generate_install
 #      invoke :generate_user
