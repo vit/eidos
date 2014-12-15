@@ -21,9 +21,8 @@ Gem::Specification.new do |spec|
 
 #  s.add_dependency 'bitters', '~> 0.10.0'
   spec.add_dependency 'bundler', '~> 1.7'
-#  s.add_dependency 'rails', Suspenders::RAILS_VERSION
 #  spec.add_dependency 'rails', '~> 4.1'
-  spec.add_dependency 'rails', '~> 4.2.0.rc3'
+#  spec.add_dependency 'rails', '~> 4.2.0.rc3'
 
 #  spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"

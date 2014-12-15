@@ -56,9 +56,9 @@ module Eidos
 
       gem 'eidos', '~> 0.0.0'
 
-      #inside app_name do
-      #  run 'bundle install'
-      #end
+      inside app_name do
+        run 'bundle install'
+      end
 
 #      gsub_file 'Gemfile', /^(gem 'spring')/, '#\0'
     end
